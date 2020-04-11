@@ -44,7 +44,6 @@ void insert(int data){
     }
 }
 
-// according to pricipal of BST, elements greater than parent will be on right and lesser will be on left
 int maximum(){
     int max=0;
     struct Node* current=head;
@@ -53,9 +52,25 @@ int maximum(){
             max=current->data;
             current=current->right;
         }
-        else current=current->right;
+        else
+        {
+            current=current->right;
+        } 
     }
     return max;
+}
+
+int minimum(){
+    struct Node* current=head;
+    int min=__INT_MAX__;
+    while(current){
+        if(current->data < min){
+            min=current->data;
+            current=current->left;
+        }
+        else current=current->left;
+    }
+    return min;
 }
 
 int main(){
@@ -67,6 +82,6 @@ int main(){
         scanf("%d",&ele);
         insert(ele);
     }
-    print(head);
     printf("Max is: %d\n",maximum());
+    printf("Minimum is: %d\n",minimum());
 }
