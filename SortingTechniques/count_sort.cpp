@@ -1,7 +1,7 @@
 // O(n) time complexity
 #include<iostream>
 using namespace std;
-//assuming array contains maximum element as 99
+//assuming maximum element in array is 99
 void count_sort(int* arr,int n){
     int hash[100]={0};
     int k=0;
