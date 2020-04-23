@@ -1,4 +1,3 @@
-// count frequency of each word in a string
 #include<iostream>
 using namespace std;
 #include<unordered_map>
