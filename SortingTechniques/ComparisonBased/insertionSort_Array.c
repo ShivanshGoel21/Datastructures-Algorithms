@@ -1,4 +1,4 @@
-/*insertion sort takes O(n) time.It is adaptive and stable also*/ 
+/*insertion sort takes O(nlogn) time.It is adaptive and stable also*/ 
 
 #include<stdio.h>
 void insertion_sort(int* arr,int n){
