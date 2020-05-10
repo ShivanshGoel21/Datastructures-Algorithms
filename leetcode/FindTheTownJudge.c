@@ -19,3 +19,28 @@ int findJudge(int N, int** trust, int trustSize, int* trustColSize){
     }
     return -1;
 }
+
+
+
+/// better runtime
+
+// the town judge trust nobody
+// everybody trusts towm judge
+// [a,b] a trust b
+
+// trust[i][0]
+int findJudge(int N, int** trust, int trustSize, int* trustColSize){
+    int *trust_count;
+    // int *ifTrust;
+    // ifTrust=(int*)calloc(sizeof(int),N+1);
+    trust_count=(int*)calloc(sizeof(int),N+1);
+    int i;
+    for(i=0;i<trustSize;i++){
+            trust_count[trust[i][1]]++;
+            trust_count[trust[i][0]]--;
+    }
+    for(i=1;i<=N;i++){
+        if(trust_count[i]==N-1) return i;
+    }
+    return -1;
+}
