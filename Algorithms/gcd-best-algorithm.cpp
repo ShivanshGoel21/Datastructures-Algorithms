@@ -11,3 +11,6 @@ int main(){
 	cout<<gc(a,b)<<endl;
 	return 0;
 }
+
+
+// gcd(a,b)=gcd(a1,b)=gcd(b,a1)
